@@ -3,6 +3,7 @@ package pl.nullpointerexception.p6;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static pl.nullpointerexception.p6.ExceptionsExample.DEFAULT_NUMBER;
 
@@ -35,11 +36,10 @@ class ExceptionsExampleTest {
         // given
         int i = 10;
         // when
-        assertThrows(IllegalArgumentException.class,
-                     () -> exceptionsExample.doSomething(i),
-                     "Parametr jest większy od 5");
+        assertThatThrownBy(() -> exceptionsExample.doSomething(i))
+                          .isInstanceOf(IllegalArgumentException.class)
+                          .hasMessage("Parametr jest większy od 5");
     }
-
 
 
 }
