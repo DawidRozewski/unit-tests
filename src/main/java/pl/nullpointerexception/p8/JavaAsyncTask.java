@@ -15,6 +15,7 @@ public class JavaAsyncTask {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             System.out.println("Wydrukowanie po 0.5s");
             result = true;
