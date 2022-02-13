@@ -7,22 +7,19 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import java.util.List;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class PolicyConfiguration {
+
     @Id
-    private Long id;
-    private String userName;
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Privileges> privileges;
+    private long id;
+    private BigDecimal amountDiscount;
+    private BigDecimal percentDiscount;
 
 
 }
