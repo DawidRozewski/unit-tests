@@ -8,7 +8,6 @@ import pl.nullpointerexception.service.exception.ValidationException;
 
 import javax.transaction.Transactional;
 import java.time.Clock;
-import java.util.Arrays;
 import java.util.List;
 
 @Service

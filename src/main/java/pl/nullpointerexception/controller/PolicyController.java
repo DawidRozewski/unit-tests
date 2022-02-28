@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.nullpointerexception.model.Policy;
 import pl.nullpointerexception.service.PolicyCopyService;
 
-@RestController
 @AllArgsConstructor
+@RestController
 public class PolicyController {
 
     private final PolicyCopyService policyCopyService;
