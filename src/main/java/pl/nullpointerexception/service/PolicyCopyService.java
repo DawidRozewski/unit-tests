@@ -36,7 +36,7 @@ public class PolicyCopyService {
      */
     private void validatePolicy(Policy policy) {
         validateMostRecentPolicyForCustomer(policy, policy.getCustomer().getId());
-        validatePolicyStatus(policy, Arrays.asList(PolicyStatus.ACTIVE));
+        validatePolicyStatus(policy, List.of(PolicyStatus.ACTIVE));
         validateCustomerIsActive(policy);
     }
 

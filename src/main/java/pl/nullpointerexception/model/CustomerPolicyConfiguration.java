@@ -1,22 +1,9 @@
 package pl.nullpointerexception.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class CustomerPolicyConfiguration {
 
     @Id
@@ -28,4 +15,45 @@ public class CustomerPolicyConfiguration {
     private PolicyConfiguration policyConfiguration;
 
 
+    public CustomerPolicyConfiguration(long id, BigDecimal amountDiscount, BigDecimal percentDiscount, PolicyConfiguration policyConfiguration) {
+        this.id = id;
+        this.amountDiscount = amountDiscount;
+        this.percentDiscount = percentDiscount;
+        this.policyConfiguration = policyConfiguration;
+    }
+
+    public CustomerPolicyConfiguration() {
+    }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public BigDecimal getAmountDiscount() {
+        return this.amountDiscount;
+    }
+
+    public BigDecimal getPercentDiscount() {
+        return this.percentDiscount;
+    }
+
+    public PolicyConfiguration getPolicyConfiguration() {
+        return this.policyConfiguration;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setAmountDiscount(BigDecimal amountDiscount) {
+        this.amountDiscount = amountDiscount;
+    }
+
+    public void setPercentDiscount(BigDecimal percentDiscount) {
+        this.percentDiscount = percentDiscount;
+    }
+
+    public void setPolicyConfiguration(PolicyConfiguration policyConfiguration) {
+        this.policyConfiguration = policyConfiguration;
+    }
 }

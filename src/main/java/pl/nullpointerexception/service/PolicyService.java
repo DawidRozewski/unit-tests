@@ -13,7 +13,7 @@ public class PolicyService {
 
     public Policy getPolicy(Long policyId) {
         return policyRepository.findById(policyId)
-                .orElseThrow(() -> new IllegalArgumentException("Polityka nie istniej"));
+                .orElseThrow(() -> new IllegalArgumentException("Polityka nie istnieje"));
     }
 
     public Policy addNewPolicy(Policy policy) {
